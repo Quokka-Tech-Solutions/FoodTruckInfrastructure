@@ -3,12 +3,10 @@ variable "profile" {
   type        = string
   default     = "terraform"
 }
-variable "aws_access_key" {
 
-}
-variable "aws_secret_key" {
+#variable "AWS_ACCESS_KEY_ID" {}       # if uncommented, these will be supplied from the command line
+#variable "AWS_SECRET_ACCESS_KEY" {}
 
-}
 variable "region" {
   description = "Region for AWS resources"
   type        = string

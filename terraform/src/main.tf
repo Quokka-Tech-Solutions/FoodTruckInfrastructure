@@ -1,18 +1,12 @@
+# Configure the AWS Provider
 provider "aws" {
-  profile = var.profile
-  region = local.region
+  region = "us-east-1"
 }
 
-locals {
-  region = "us-east-1"
-
-  user_data = <<-EOT
-  #!/bin/bash
-  echo "Hello Terraform!"
-  EOT
-
+# Create a VPC
+resource "aws_vpc" "my-vpc" {
+  cidr_block = "10.0.0.0/16"
   tags = {
-    Owner       = "user"
-    Environment = "dev"
+    Name = "Demo VPC"
   }
 }
